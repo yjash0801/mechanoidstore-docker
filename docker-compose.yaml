@@ -1,0 +1,25 @@
+networks:
+  default:
+    external:
+      name: mechanoidstore
+
+services:
+# docker run -d --name mongodb --network=mechanoidstore mongodb:1
+  mongodb:
+    image: mongodb:1
+    # networks:
+    # - mechanoidstore
+
+  catalogue:
+    image: catalogue:1
+    depends_on:
+    - mongodb
+    # networks:
+    # - mechanoidstore
+
+  web:
+    image: web:1
+    ports:
+      - "80:80"
+    depends_on:
+    - catalogue
