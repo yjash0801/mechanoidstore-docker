@@ -1,7 +1,7 @@
 networks:
   default:
-    external:
-      name: mechanoidstore
+    external: true
+    name: mechanoidstore
 
 services:
 # docker run -d --name mongodb --network=mechanoidstore mongodb:1
