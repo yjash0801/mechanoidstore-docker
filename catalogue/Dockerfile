@@ -8,9 +8,9 @@ WORKDIR /opt/server
 
 ENV MONGO=true
 
-USER mechanoidstore
-
 RUN chown -R mechanoidstore:mechanoidstore /opt/server
+
+USER mechanoidstore
 
 COPY package.json /opt/server
 
