@@ -10,7 +10,7 @@ ENV MONGO=true
 
 USER mechanoidstore
 
-RUN chown mechanoidstore:mechanoidstore /opt/server
+RUN chown -R mechanoidstore:mechanoidstore /opt/server
 
 COPY package.json /opt/server
 
