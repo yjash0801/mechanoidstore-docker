@@ -14,16 +14,16 @@ services:
   mongodb:
     image: mongodb:v1
     container_name: mongodb
+    volumes:
+      - source: mongodb
+        target: /data/db
+        type: volume
     # networks:
     # - mechanoidstore
 
   catalogue:
     image: catalogue:v1
     container_name: catalogue
-    volumes:
-      - source: mongodb
-        target: /data/db
-        type: volume
     depends_on:
     - mongodb
     # networks:
